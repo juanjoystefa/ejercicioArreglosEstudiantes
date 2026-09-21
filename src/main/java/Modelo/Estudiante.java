@@ -7,14 +7,14 @@ package Modelo;
  *
  * @author Usuario
  */
-public class Usuario {
+public class Estudiante {
     private String id;
     private String nombre;
     private double notaDesarrollo;
     private double notaMatematica;
     private double definitiva;
 
-    public Usuario(String id, String nombre, double notaDesarrollo, double notaMatematica) {
+    public Estudiante(String id, String nombre, double notaDesarrollo, double notaMatematica) {
         
         this.id = id;
         this.nombre = nombre;
@@ -58,7 +58,7 @@ public class Usuario {
         definitiva = notaDesarrollo*0.6 + notaMatematica*0.4;
         return definitiva;
     }
-    
+
     public void incrementarNotaDesarrollo(double incremento){
         if (this.notaDesarrollo + incremento > 5.0){
             this.notaDesarrollo = 5.0;
