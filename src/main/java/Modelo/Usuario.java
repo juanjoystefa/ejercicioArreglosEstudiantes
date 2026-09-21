@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
-import javax.swing.JOptionPane;
 /**
  *
  * @author Usuario
@@ -58,6 +57,14 @@ public class Usuario {
     public double calcularDefinitiva(){
         definitiva = notaDesarrollo*0.6 + notaMatematica*0.4;
         return definitiva;
+    }
+    
+    public void incrementarNotaDesarrollo(double incremento){
+        if (this.notaDesarrollo + incremento > 5.0){
+            this.notaDesarrollo = 5.0;
+        } else {
+            this.notaDesarrollo = this.notaDesarrollo + incremento;
+        }
     }
     
 }
