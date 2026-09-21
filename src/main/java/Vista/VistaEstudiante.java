@@ -11,7 +11,7 @@ import Modelo.Estudiante;
  *
  * @author Usuario
  */
-public class Agosto24 {
+public class VistaEstudiante {
 
     public static void main(String[] args) {
         // Ingresar el número de estudiantes
@@ -32,6 +32,23 @@ public class Agosto24 {
             // Se crea el objeto y se asigna a la posición "i" del arreglo
             estudiantes[i] = new Estudiante(codigo, nombre, notaDesarrollo, notaMatematica);
 
-        }   JOptionPane.showMessageDialog(null, "¡Se registraron " + estudiantes.length + " estudiantes en el arreglo!");
+        }
+        
+        // Validar que la cifra de incremento esté entre 0.0 y 0.5
+        double incremento = Double.parseDouble(JOptionPane.showInputDialog("Ingresa la cifra para incrementar la nota de desarrollo (entre 0.0 y 0.5"));
+
+        while (incremento < 0.0 || incremento > 0.5){
+            JOptionPane.showMessageDialog(null, "Error: La cifra debe estar entre 0.0 y 0.5");
+            incremento = Double.parseDouble(JOptionPane.showInputDialog("Ingresa la cifra para incrementar la nota de desarrollo (entre 0.0 y 0.5"));
+        }
+
+        // Recorrer el arreglo para modificar la  nota de cada estudiante
+        for (int i = 0; i < estudiantes.length; i++){
+            if (estudiantes[i] != null){
+                estudiantes[i].incrementarNotaDesarrollo(incremento);
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, "¡Se registraron " + estudiantes.length + " estudiantes en el arreglo!");
     }
 }
